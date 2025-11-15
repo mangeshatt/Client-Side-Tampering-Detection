@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tampering Detection Demo</title>
+</head>
+<body>
+  <div id="important-div">This is important!</div>
+  <script src="src/tampering.js"></script>
+  <script>
+    window.onload = function () {
+      // Assume '123456' is the precomputed hash for demo
+      TamperingDetector.init({
+        criticalElements: ['#important-div'],
+        scriptHashes: { 'src/tampering.js': '123456' }
+      });
+    };
+  </script>
+</body>
+</html>
